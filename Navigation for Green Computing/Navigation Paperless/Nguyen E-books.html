@@ -6,6 +6,23 @@
 	<body>
 		<h1> eBooks: Going Paperless </h> </br>
 		<img src="eBook.jpg" />
+		
+		<div style="background-color: aliceblue;">
+			<h4> The Tree Calculator</h2>
+			<div class="form-group" style="margin-bottom: 10px;">
+				<label style="font-size: 14px; margin-right: 50px;" for="pages-count">Number of pages: </label>
+				<input name="pages-count" id="pages-count" />
+			</div>
+			<div class="form-group" style="margin-bottom: 10px;">
+				<label style="font-size: 14px; margin-right: 44px;" for="copies-count">How many copies? </label>
+				<input name="copies-count" id="copies-count" />
+			</div>
+			<button style="margin-top: 10px;" type="submit" onclick="handleSubmit()">Calculate the body count</button>
+			<div class="form-group" style="margin-bottom: 10px;">
+				<label style="font-size: 14px;" for="body-count">You're killing this many trees, asshole!</label>
+				<input name="body-count" id="body-count" />
+			</div>
+		</div>
 	</body>
 
 <nav>
@@ -33,11 +50,27 @@
 	</ul>
 <hr />
 		
-</html>
+
 
 Sources:
 <br /> <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fbookstr.com%2Farticle%2Fthe-chamber-of-ebook-hate-why-we-havent-accepted-ebooks%2F&psig=AOvVaw3jNgBCvlNFD6RyYstMt22x&ust=1664234716632000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCKD-9cyLsfoCFQAAAAAdAAAAABAD">Image of eBook </a>
 <br /> <a href="https://www.teachucomp.com/create-html-bullet-points-instructions/">Creating Bullet Points</a>
+
+<script>
+function handleSubmit() {
+	const numberOfPages = document.getElementById('pages-count').value;
+	const numberOfCopies = document.getElementById('copies-count').value;
+	const treesKilled = numberOfCopies * numberOfPages;
+
+	console.log('multiplying ', numberOfPages, ' by ', numberOfCopies);
+	console.log('and this is how many beautiful trees you cut down...', treesKilled);
+
+	document.getElementById('body-count').value = treesKilled;
+}
+</script>
+
+
+</html>
 
 
 	
